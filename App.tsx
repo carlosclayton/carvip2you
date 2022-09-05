@@ -8,6 +8,7 @@ import {ThemeProvider} from "styled-components";
 import theme from "./src/styles/theme";
 import {CarDetails} from "./src/pages/CarDetails";
 import {Scheduling} from "./src/pages/Scheduling";
+import {SchedulingDetails} from "./src/pages/SchedulingDetails";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -36,7 +37,7 @@ export default function App() {
 
             />
             <ThemeProvider theme={theme}>
-                <Scheduling />
+                <SchedulingDetails />
             </ThemeProvider>
         </>
 
