@@ -1,13 +1,13 @@
 import styled from "styled-components/native";
+import {BorderlessButton} from "react-native-gesture-handler";
 
-export const Container = styled.View`
-    flex: 1;
-    background-color: ${({theme}) => theme.colors.background_secundary};
+export const Container = styled(BorderlessButton)`
+  background-color: ${({theme}) => theme.colors.header};
 `;
 
 export const Header = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
