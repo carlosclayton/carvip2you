@@ -3,20 +3,25 @@ import {
     Container,
     Title
 } from './styles'
+import theme from "../../styles/theme";
 
 
 interface Props{
     title: string;
     color?: string;
+    onPress: () => void;
 }
 
 export function Button({
         title,
         color,
-        ...rest
+        onPress
     }: Props) {
     return (
-        <Container {...rest} color={color}>
+        <Container
+            color={color ? color : theme.colors.main}
+            onPress={onPress}
+        >
             <Title>{title}</Title>
         </Container>
     );

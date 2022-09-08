@@ -38,8 +38,13 @@ import {Button} from "../../components/Button";
 import {Feather} from "@expo/vector-icons";
 import {RFValue} from "react-native-responsive-fontsize";
 import theme from "../../styles/theme";
+import {useNavigation} from "@react-navigation/native";
 
 export function SchedulingDetails() {
+    const navigation = useNavigation<any>();
+    function handConfirmRental(){
+        navigation.navigate('SchedulingComplete');
+    }
     return (
         <Container>
             <Header>
@@ -110,7 +115,7 @@ export function SchedulingDetails() {
             </Content>
 
             <Footer>
-                <Button title="Confirmar" />
+                <Button title="Alugar agora" color={theme.colors.success} onPress={handConfirmRental} />
             </Footer>
         </Container>
     );

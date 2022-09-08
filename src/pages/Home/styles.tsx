@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 import {RFValue} from "react-native-responsive-fontsize";
-import {Animated} from "react-native";
-import FlatList = Animated.FlatList;
+import {FlatList} from "react-native";
 
 export const Container = styled.View`
   flex: 1;

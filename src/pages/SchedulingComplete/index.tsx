@@ -5,9 +5,15 @@ import DoneSvg from '../../assets/done.svg';
 import {Container, Content, Footer, Message, Title} from './styles'
 import {StatusBar, useWindowDimensions} from "react-native";
 import {ConfirmButton} from "../../components/ConfirmButton";
+import {useNavigation} from "@react-navigation/native";
 
 
 export function SchedulingComplete() {
+    const navigation = useNavigation<any>();
+    function handConfirmRental(){
+        navigation.navigate('Home');
+    }
+
     const width = useWindowDimensions().width;
     return (
         <Container>
@@ -33,8 +39,8 @@ export function SchedulingComplete() {
             </Content>
 
             <Footer>
-                <ConfirmButton title="Ok"/>
+                <ConfirmButton title="Ok" onPress={handConfirmRental}/>
             </Footer>
         </Container>
     );
-};
+}
