@@ -42,14 +42,18 @@ import {useNavigation} from "@react-navigation/native";
 
 export function SchedulingDetails() {
     const navigation = useNavigation<any>();
+
     function handConfirmRental(){
         navigation.navigate('SchedulingComplete');
+    }
+
+    function handNavigationBack(){
+        navigation.goBack();
     }
     return (
         <Container>
             <Header>
-                <BackButton onPress={() => {
-                }}/>
+                <BackButton onPress={() => handNavigationBack() }/>
             </Header>
 
             <CarImages>

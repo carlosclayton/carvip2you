@@ -34,7 +34,7 @@ export function CarDetails() {
 
     const navigation = useNavigation<any>();
     function handConfirmRental(){
-        navigation.navigate('Scheduling');
+        navigation.navigate('Scheduling', {car});
     }
 
     function handNavigationBack(){
