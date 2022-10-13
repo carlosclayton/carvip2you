@@ -65,7 +65,7 @@ export function Scheduling() {
 
         if(start.timestamp > end.timestamp){
             start = end;
-            end = end
+            end = start;
         }
 
         setLastSelectedDate(end);
@@ -116,7 +116,11 @@ export function Scheduling() {
 
             </Content>
             <Footer>
-                <Button title="Confirmar" onPress={handConfirmRental} />
+                <Button
+                    title="Confirmar"
+                    onPress={handConfirmRental}
+                    enabled={!!rentalPeriod.startFormatted}
+                />
             </Footer>
         </Container>
     );

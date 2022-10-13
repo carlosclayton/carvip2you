@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Container, Header, HeaderContent, TotalCars, CarList} from './styles'
-
+import {Container, Header, HeaderContent, TotalCars, CarList, MyCarsButton} from './styles'
+import { Ionicons } from '@expo/vector-icons';
 import Logo from '../../assets/logo.svg';
 
 import {StatusBar} from "react-native";
@@ -11,6 +11,7 @@ import {useEffect, useState} from "react";
 import {api} from "../../services/api";
 import {CarDTO} from "../../dtos/CarDTO";
 import {Load} from "../../components/Load";
+import theme from "../../styles/theme";
 
 export function Home() {
     const [cars, setCars] = useState<CarDTO[]>([]);
@@ -35,8 +36,11 @@ export function Home() {
 
 
     function handCarDetails(car: CarDTO){
-
         navigation.navigate('CarDetails', {car});
+    }
+
+    function handOpenMyCars(){
+        navigation.navigate('MyCars');
     }
 
     return (
@@ -54,7 +58,7 @@ export function Home() {
                     />
 
                     <TotalCars>
-                        Total de 12 carros
+                        Total de { cars.length } carros
                     </TotalCars>
                 </HeaderContent>
 
@@ -67,6 +71,13 @@ export function Home() {
                         <Cars data={item} onPress={() => handCarDetails(item)} />}
                 />
             }
+            <MyCarsButton onPress={() => handOpenMyCars()}>
+                <Ionicons
+                    size={32}
+                    name="ios-car-sport"
+                    color={theme.colors.shape}
+                />
+            </MyCarsButton>
         </Container>
     );
 }
